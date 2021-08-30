@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snake game</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        .playGround{
+            width: 95vw;
+            height: 60vh;
+            background-color: black;
+            display: block;
+            margin: auto;
+            border: 1px solid red;
+            position: relative;
+            box-shadow: 2px 2px 2px grey;
+        }
+        .snake_head{
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            position: absolute;
+            z-index: 1;
+            /* box-shadow: 2px 2px 2px grey; */
+            /* left: 20px; */
+        }
+        .btn_container{
+            width: 100vw;
+            height: 200px;
+            /* background-color: green; */
+            position: relative;
+            top: 10px;
+        }
+        .buttons{
+            width: 150px;
+            height: 150px;
+            /* background-color: red; */
+            margin: auto;
+        }
+        .buttons div{
+            
+            color: white;
+        
+        }
+        .mid_button{
+            width: 100%;
+            /* background-color: yellow; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .left,.right,.top,.bottom,.stop{
+            width: 55px;
+            height: 55px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .top,.bottom{
+            margin: auto;
+            
+
+        }
+        .stop{
+            background-color: red;
+           
+        }
+        
+        .food{
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            z-index: 1;
+        }
+        .title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+        <div><h3>score: <span id="score">0</span></h3></div>
+        <div><h1 id="tg">Snake game</h1></div>
+        <div></div>
+    </div>
+    <div id="playg" class="playGround">
+
+        <div id="snake_head" onclick="snk()" class="snake_head"></div>
+        <div id="food" class="food"></div>
+
+    </div>
+
+    <div class="btn_container">
+        <div class="buttons">
+            <div class="top" onclick="all_mov('top',-20,90)">T</div>
+            <div class="mid_button"><div class="left" onclick="all_mov('left',-20,-180)">L</div><div class="stop" onclick="movStop()">S</div>
+            <div class="right" onclick="all_mov('left',20,0)">R</div></div>
+            <div class="bottom" onclick="all_mov('top',20,-90)">B</div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
